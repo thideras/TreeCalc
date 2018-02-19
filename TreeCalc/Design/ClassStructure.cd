@@ -3,11 +3,12 @@
   <Class Name="TreeCalc.Player">
     <Position X="7" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAgAAAAAIAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAAgAAAAAIAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Class" />
+      <Property Name="Race" />
     </ShowAsAssociation>
   </Class>
   <Class Name="TreeCalc.PlayerClass">
@@ -17,11 +18,25 @@
       <FileName>PlayerClass.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Enum Name="TreeCalc.PlayerClassList">
-    <Position X="14" Y="0.75" Width="1.5" />
+  <Class Name="TreeCalc.PlayerRace">
+    <Position X="11.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PlayerRace.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="TreeCalc.PlayerClassList" Collapsed="true">
+    <Position X="13.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAABIAAAAAAAADAAEAAAgECAAAAUAAAAAAIAAAA=</HashCode>
       <FileName>PlayerClassList.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TreeCalc.PlayerRaceList" Collapsed="true">
+    <Position X="13.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAgAAEEgAIAAAAIAAAAAAAAAAEIAAAgAAAAABQAAAg=</HashCode>
+      <FileName>PlayerRaceList.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

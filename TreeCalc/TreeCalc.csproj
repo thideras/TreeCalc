@@ -71,6 +71,8 @@
   <ItemGroup>
     <Compile Include="Player.cs" />
     <Compile Include="PlayerClassList.cs" />
+    <Compile Include="PlayerRace.cs" />
+    <Compile Include="PlayerRaceList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -88,7 +90,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Design\PlayerStructure.cd" />
+    <None Include="Design\ClassStructure.cd" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,6 +98,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\CalculationNotes.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\ToDo.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Design\ImplementedFeatures.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
