@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeCalc", "TreeCalc\TreeCalc.csproj", "{DCE6BD73-E14C-440B-B608-9A1B32920764}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCE6BD73-E14C-440B-B608-9A1B32920764}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCE6BD73-E14C-440B-B608-9A1B32920764}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCE6BD73-E14C-440B-B608-9A1B32920764}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCE6BD73-E14C-440B-B608-9A1B32920764}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7DA1015-9F25-4923-BECA-7CBF73FC8D26}
+	EndGlobalSection
+EndGlobal
