@@ -16,7 +16,7 @@ Hot duration does not change with haste, but rather the number of ticks is modif
 
 (NormalTickDuration)/(1 + PlayerHastePercentage) = Tick duration in seconds
 Example: 10s duration, 5 ticks, 10% haste. (2s)/(1 + 0.10) = 1.818 seconds until next tick
-Example: 10s duration, 5 ticks, 25% haste. (2s)/(1 + 0.25) = 1.6 seconds until next tick
+Example: 10s duration, 5 ticks, 25% haste. (2s)/(1 + 0.25) = 1.600 seconds until next tick
 Example: 10s duration, 5 ticks, 50% haste. (2s)/(1 + 0.50) = 1.333 seconds until next tick
 
 When the hot is cast, or a tick happens, the player's current haste determines when the next tick is scheduled. In the above example, if the player had 50% haste when a hot was cast, a tick would happen immediately and the next tick would be scheduled at [CurrentTime + 1.333] seconds. Since the hots are scheduled from the point of view of the current time, we don't care how many ticks occur over the duration of the hot, because the player's haste may change at any time.
@@ -24,11 +24,12 @@ When the hot is cast, or a tick happens, the player's current haste determines w
 ------------------------------------------------------
 
 Remainder tick
-If the player has any amount of haste, a remainder tick is likely to occur. This remaining tick is a fraction of a normal tick, relative to the time left in the buff. This tick always occurs when the hot buff ends. You can calculate the amount of the heal with the following:
+If the player has any amount of haste, a remainder tick is likely to occur. This remaining tick is a fraction of a normal tick, relative to the time left in the buff. This tick always occurs when the hot buff ends. If the player has no haste (or the haste the player has gives a perfect number of ticks), the remainder tick heals the same as a 'normal' tick. You can calculate the amount of the heal with the following:
 
 (TimeRemaining)/(TickDuration) * TickHealAmount = Final tick healing amount
 Example: 1.00s remaining, 2.00s tick duration, 100 heal per tick. (1.00s)/(2.00s) * 100 = 50.0 health healed
 Example: 0.75s remaining, 1.81s tick duration, 100 heal per tick. (0.75s)/(1.81s) * 100 = 41.4 health healed
+Example: 2.00s remaining, 2.00s tick duration, 100 heal per tick. (2.00s)/(2.00s) * 100 = 100 health healed (no haste example)
 
 ------------------------------------------------------
 
