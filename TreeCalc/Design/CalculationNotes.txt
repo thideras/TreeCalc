@@ -1,5 +1,7 @@
 ﻿Notes on calculating how healing is done will be made here.
 
+All information, unless noted otherwise, is either information released by developers or discvoered through personal testing by Corey.
+
 Google drive documents:
 HoT tick calculations (Draenor): https://docs.google.com/spreadsheets/d/1WgUaMALiSmUGZCvyptYj2pEG3OJx7gvDzpS1a8mfly8/edit?usp=sharing
 Healing calculations (Legion): https://docs.google.com/spreadsheets/d/1hNxL8H32bUVonc4TaxoY9JXd6yC_mDkhJfLei0EUq8c/edit?usp=sharing

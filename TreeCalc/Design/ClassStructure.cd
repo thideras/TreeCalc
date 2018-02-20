@@ -1,42 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram MajorVersion="1" MinorVersion="1">
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Comment CommentText="There are many associations not shown between PlayerGearSlots and the GearSlot class.">
+    <Position X="2.344" Y="2.51" Height="0.75" Width="1.7" />
+  </Comment>
   <Class Name="TreeCalc.Player">
     <Position X="7" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAgAAAAAIAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAAgAAAAAIAQAQABAAAAAAABAAAAAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Property Name="Class" />
       <Property Name="Race" />
+      <Property Name="GearSlots" />
+      <Property Name="TotalGearStats" />
     </ShowAsAssociation>
   </Class>
   <Class Name="TreeCalc.PlayerClass">
-    <Position X="11.75" Y="1.75" Width="1.5" />
+    <Position X="9.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>PlayerClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TreeCalc.PlayerRace">
-    <Position X="11.75" Y="4" Width="1.5" />
+    <Position X="9.75" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>PlayerRace.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="TreeCalc.BaseStats">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAUgAEAQAEAAQACAAAAAAAFAAIAIAAA=</HashCode>
+      <FileName>BaseStats.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeCalc.GearSlot">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GearSlot.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Stats" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TreeCalc.PlayerGearSlots">
+    <Position X="4.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAIAAAAQA2AAQIAAEAAAAAAAAgAAAAAAQAAAAICAAQA=</HashCode>
+      <FileName>PlayerGearSlots.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="TreeCalc.PlayerClassList" Collapsed="true">
-    <Position X="13.5" Y="1.75" Width="1.5" />
+    <Position X="11.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ACAAAAABIAAAAAAAADAAEAAAgECAAAAUAAAAAAIAAAA=</HashCode>
       <FileName>PlayerClassList.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="TreeCalc.PlayerRaceList" Collapsed="true">
-    <Position X="13.5" Y="4" Width="1.5" />
+    <Position X="11.5" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAgAAEEgAIAAAAIAAAAAAAAAAEIAAAgAAAAABQAAAg=</HashCode>
       <FileName>PlayerRaceList.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TreeCalc.GearSlotList">
+    <Position X="2.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAIAAAAAAwAAQIAAEAAAAAAAAAAAgAgAQAAAAACAgQA=</HashCode>
+      <FileName>GearSlotList.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TreeCalc.PlayerLevels">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAA=</HashCode>
+      <FileName>PlayerLevels.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

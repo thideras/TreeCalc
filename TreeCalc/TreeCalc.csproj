@@ -62,6 +62,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GearSlot.cs" />
     <Compile Include="PlayerClass.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -71,8 +72,12 @@
   <ItemGroup>
     <Compile Include="Player.cs" />
     <Compile Include="PlayerClassList.cs" />
+    <Compile Include="GearSlotList.cs" />
+    <Compile Include="PlayerGearSlots.cs" />
+    <Compile Include="PlayerLevels.cs" />
     <Compile Include="PlayerRace.cs" />
     <Compile Include="PlayerRaceList.cs" />
+    <Compile Include="BaseStats.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
