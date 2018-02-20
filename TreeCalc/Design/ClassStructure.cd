@@ -1,8 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
-  <Comment CommentText="There are many associations not shown between PlayerGearSlots and the GearSlot class.">
-    <Position X="2.344" Y="2.51" Height="0.75" Width="1.7" />
-  </Comment>
   <Class Name="TreeCalc.Player">
     <Position X="7" Y="1.75" Width="1.5" />
     <TypeIdentifier>
@@ -40,7 +37,7 @@
   <Class Name="TreeCalc.GearSlot">
     <Position X="4.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>ABAAAAAAAAAAAAAAAABAAAAAAgAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>GearSlot.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -48,10 +45,24 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="TreeCalc.PlayerGearSlots">
-    <Position X="4.25" Y="2.75" Width="1.5" />
+    <Position X="4.25" Y="3" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAIAAAAQA2AAQIAAEAAAAAAAAgAAAAAAQAAAAICAAQA=</HashCode>
       <FileName>PlayerGearSlots.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeCalc.BaseBuff">
+    <Position X="14.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAggAAAAAAAAAQAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseBuff.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeCalc.Ticker">
+    <Position X="16.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Ticker.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="TreeCalc.PlayerClassList" Collapsed="true">
@@ -68,7 +79,7 @@
       <FileName>PlayerRaceList.cs</FileName>
     </TypeIdentifier>
   </Enum>
-  <Enum Name="TreeCalc.GearSlotList">
+  <Enum Name="TreeCalc.GearSlotList" Collapsed="true">
     <Position X="2.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAIAAAAAAwAAQIAAEAAAAAAAAAAAgAgAQAAAAACAgQA=</HashCode>

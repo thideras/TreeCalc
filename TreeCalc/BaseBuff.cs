@@ -4,20 +4,27 @@ using System.Linq;
 using System.Text;
 
 namespace TreeCalc {
-    public class GearSlot {
-        public GearSlotList SlotType {
+    public class BaseBuff {
+
+        public string Name {
             get => default(int);
             set {
             }
         }
 
-        public BaseStats Stats {
-            get => default(BaseStats);
+        public string Description {
+            get => default(int);
             set {
             }
         }
 
-        public int ItemLevel {
+        public int ID {
+            get => default(int);
+            set {
+            }
+        }
+
+        public decimal EndTime {
             get => default(int);
             set {
             }

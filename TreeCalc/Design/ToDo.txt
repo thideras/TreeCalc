@@ -1,2 +1,5 @@
 ﻿To Do list for the program
 
+Create classes for buffs/hots
+Create a global list of buffs and hots for players. This makes checking buffs (rules like "only have 5 rejuvenations active at one time") MUCH easier to check and there is no reason to split buffs out per person because we can do that with Linq anyway
+Be able to create a profile for each WoW patch, containing the spell information from that time. This would allow me to run simulations on future patches or in 'what if' scenarios

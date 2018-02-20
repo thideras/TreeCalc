@@ -11,7 +11,22 @@ namespace TreeCalc {
             Name = GivenName;
             //TODO: Determine if we need a player ID. If an ID is not needed, we need to verify names are unique.
 
-            //DEBUG: Stats are manually set so we don't have to add up gear. In the future, this data will be pulled from the 
+            //DEBUG: Stats are manually set so we don't have to add up gear. In the future, this data will be pulled from the gear and buffs during normal execution
+            //Int: 75466
+            //Stam: 108157, 6.49m health
+            //Mana regen: 48,400 per 5 seconds
+            //Crit: 5% + 9472 = 28.68%
+            //Haste: 9098 = 24.26%
+            //Mastery: 4.80% + 11816 = 22.52%
+            //Vers: 1749 = 3.68%
+
+            //Base stats 110 Highmountain Tauren
+            //Int: 7327
+            //Stam: 6261, 375.7k health
+            //Mana: 44,000 per 5 seconds
+            //Crit: 5%
+            //Mastery: 4.80%
+            //Vers: 1%
         }
 
         public string Name { get; private set; }
