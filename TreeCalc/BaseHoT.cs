@@ -9,5 +9,7 @@ namespace TreeCalc {
         public decimal SpellPowerCoefficientPerTick { get; set; }
 
         public decimal BaseTickDuration { get; set; }
+        
+        public decimal NextTickTime { get; set; }
     }
 }

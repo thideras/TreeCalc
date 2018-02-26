@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TreeCalc.Spells.Druid {
     public class Rejuvenation : BaseHeal {
-        public Rejuvenation(Player GivenPlayer) {
+        public Rejuvenation() {
             //Wowhead link https://www.wowhead.com/spell=774/rejuvenation
             Name = "Rejuvenation";
 
@@ -23,7 +23,7 @@ namespace TreeCalc.Spells.Druid {
 
             //For right now, the logic to determine who should be healed is going to be outside the spell itself
             //In the future, the spell should be given the list of players for splash/chain buffs
-            AppliedBuff.Add(new RejuvenationHoT(GivenPlayer));
+            AppliedBuff.Add(new RejuvenationHoT());
         }
     }
 }

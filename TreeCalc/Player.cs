@@ -41,5 +41,7 @@ namespace TreeCalc {
         public PlayerGearSlots GearSlots { get; private set; }
 
         public BaseStats TotalGearStats { get; private set; }
+
+        public List<BaseBuff> PlayerBuffs { get; set; } = new List<BaseBuff>();
     }
 }
