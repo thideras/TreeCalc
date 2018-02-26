@@ -75,8 +75,15 @@
   <Class Name="TreeCalc.Logic.Druid.DruidSimpleLogic">
     <Position X="15.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Logic\Druid\DruidSimpleLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeCalc.BaseSpell">
+    <Position X="7.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgiAAABAAAAAQAAQAAAQAgAAAAAAAAEAA=</HashCode>
+      <FileName>BaseSpell.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="TreeCalc.PlayerClassList" Collapsed="true">

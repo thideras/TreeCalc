@@ -48,10 +48,10 @@ namespace TreeCalc {
             CurrentTime = 0m;
 
             //Debug
-            TreeCalc.BaseBuff hello = new BaseBuff();
-            hello.Name = "Rejuvenation";
-            hello.EndTime = 15m;
-            AllBuffs.Add(hello);
+            //TreeCalc.BaseBuff hello = new BaseBuff();
+            //hello.Name = "Rejuvenation";
+            //hello.EndTime = 15m;
+            //AllBuffs.Add(hello);
 
             //Loop through the entire fight with a time width of the given tick duration
             while (CurrentTime < FightDuration) {
