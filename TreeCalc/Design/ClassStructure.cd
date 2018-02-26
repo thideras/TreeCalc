@@ -61,7 +61,7 @@
   <Class Name="TreeCalc.BaseSimulation">
     <Position X="17.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gCAAAABgECAACAAAAAAAAAAAAAACAAAAAAAAgAAAQAA=</HashCode>
+      <HashCode>gSAAAABgECAACAAAAAAAAAAAAAACAAAAAAAAgAAAQAA=</HashCode>
       <FileName>BaseSimulation.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -70,6 +70,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
       <FileName>BaseHoT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeCalc.Logic.Druid.DruidSimpleLogic">
+    <Position X="15.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Logic\Druid\DruidSimpleLogic.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="TreeCalc.PlayerClassList" Collapsed="true">

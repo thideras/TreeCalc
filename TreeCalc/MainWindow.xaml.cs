@@ -46,7 +46,7 @@ namespace TreeCalc {
             PlayerList.Add(playerBub);
 
 
-            BaseSimulation ticker = new BaseSimulation(0.1m, 150m, "Test", PlayerList);
+            Logic.Druid.DruidSimpleLogic ticker = new Logic.Druid.DruidSimpleLogic(0.1m, 150m, "Test", PlayerList);
             ticker.Start();
         }
     }

@@ -68,6 +68,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BaseBuff.cs" />
+    <Compile Include="Logic\Druid\DruidSimpleLogic.cs" />
     <Compile Include="GearSlot.cs" />
     <Compile Include="PlayerClass.cs" />
     <Compile Include="MainWindow.xaml.cs">

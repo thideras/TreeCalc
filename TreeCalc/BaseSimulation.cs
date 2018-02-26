@@ -5,7 +5,7 @@ using System.Text;
 using System.Diagnostics;
 
 namespace TreeCalc {
-    public class BaseSimulation {
+    public abstract class BaseSimulation {
         public BaseSimulation(decimal GivenTickDuration, decimal GivenFightDuration, string GivenLabel, List<Player> GivenPlayers) {
             CurrentTime = 0m;
             TickDuration = GivenTickDuration;
@@ -18,28 +18,30 @@ namespace TreeCalc {
         /// <summary>
         /// Current time in the simulation, in seconds.
         /// </summary>
-        private decimal CurrentTime { get; set; }
+        protected decimal CurrentTime { get; set; }
 
         /// <summary>
         /// Distance between the current and next 'tick' in time.
         /// </summary>
-        private decimal TickDuration { get; set; }
+        protected decimal TickDuration { get; set; }
 
         /// <summary>
         /// Maximum fight duration, in seconds.
         /// </summary>
-        private decimal FightDuration { get; set; }
+        protected decimal FightDuration { get; set; }
 
         /// <summary>
         /// Prevents casting of spells until the specified time.
         /// </summary>
-        private decimal GCDLockoutUntil { get; set; }
+        protected decimal GCDLockoutUntil { get; set; }
 
         public string Label { get; private set; }
 
-        private List<TreeCalc.BaseBuff> AllBuffs { get; set; } = new List<BaseBuff>();
+        protected List<TreeCalc.BaseBuff> AllBuffs { get; set; } = new List<BaseBuff>();
 
-        private List<Player> PlayerList { get; set; } = new List<Player>();
+        protected List<Player> PlayerList { get; set; } = new List<Player>();
+
+        protected abstract void CastHealing();
 
         public void Start() {
             Debug.WriteLine("Starting fight simulation. Label " + Label + ". Duration " + FightDuration + ". Tick " + TickDuration + ".");
@@ -67,7 +69,7 @@ namespace TreeCalc {
             //Count any active healing
 
             RemoveExpiredBuffs();
-            //Cast new healing
+            CastHealing();
             //Calculate healing
         }
 
@@ -86,7 +88,7 @@ namespace TreeCalc {
             List<TreeCalc.BaseBuff> BuffsToRemove = AllBuffs.Where(b => b.EndTime <= CurrentTime).ToList();
 
             foreach (TreeCalc.BaseBuff CurrentBuff in BuffsToRemove) {
-                Debug.WriteLine(CurrentBuff.Name + " removed from player " + CurrentBuff.PlayerID);
+                Debug.WriteLine(CurrentBuff.Name + " removed from player " + CurrentBuff.OnPlayer.Name);
                 AllBuffs.Remove(CurrentBuff);
                 
             }
