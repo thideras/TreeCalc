@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TreeCalc.Spells.Druid {
     public class RejuvenationHoT : BaseHoT {
-        public RejuvenationHoT() {
+        public RejuvenationHoT(Player GivenPlayer) {
             Name = "Rejuvenation";
 
             ID = 774;
@@ -13,6 +13,8 @@ namespace TreeCalc.Spells.Druid {
             SpellPowerCoefficientPerTick = 0.60m;
             BaseTickDuration = 3m;
             DefaultDuration = 12m;
+
+            OnPlayer = GivenPlayer;
         }
     }
 }
