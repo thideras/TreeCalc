@@ -36,4 +36,4 @@ Example: 2.00s remaining, 2.00s tick duration, 100 heal per tick. (2.00s)/(2.00s
 ------------------------------------------------------
 
 Non-integer heals
-When a heal does not come out to an exact integer, it appears the game either rounds or randomizes the final healed amount. More research needs to be done on how the game determines this, however, the healed amount is going to be very small compared to the full healed amount. Currently, in Legion, heals are ticking in excess of 65,000 health per Rejuvenation tick, which amounts to a 0.0015% difference if rounded up or down a single health.
+When a heal does not come out to an exact integer, it appears the game either rounds or randomizes the final healed amount. More research needs to be done on how the game determines this, however, the healed amount is going to be very small compared to the full healed amount. Currently, in Legion, heals are ticking in excess of 65,000 health per Rejuvenation tick, which amounts to a 0.0015% difference if rounded up or down a single health. If healing in BfA goes down signifigantly (100 per tick or so), then these calculations will be more signifigant.

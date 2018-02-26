@@ -21,6 +21,8 @@ namespace TreeCalc {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+
+            //If we are in a debug build, add the listener so we can see debug output
 #if DEBUG
             TextWriterTraceListener debugWriter = new TextWriterTraceListener(System.Console.Out);
             Debug.Listeners.Add(debugWriter);
