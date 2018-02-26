@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,14 @@ namespace TreeCalc {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+#if DEBUG
+            TextWriterTraceListener debugWriter = new TextWriterTraceListener(System.Console.Out);
+            Debug.Listeners.Add(debugWriter);
+#endif
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
-            Ticker ticker = new Ticker(0.1m, 15m, "Test");
+            Ticker ticker = new Ticker(0.1m, 150m, "Test");
             ticker.Start();
         }
     }
