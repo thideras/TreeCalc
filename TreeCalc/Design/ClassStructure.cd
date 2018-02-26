@@ -54,14 +54,14 @@
   <Class Name="TreeCalc.BaseBuff">
     <Position X="14.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAggAAAAAAAAAQAAAAgAAAAIAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAggAAAAAAAAAQAAAAgBAAAIAAAAAAAAAA=</HashCode>
       <FileName>BaseBuff.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TreeCalc.BaseSimulation">
     <Position X="17.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gSAAAABgECAACAAAAAAAAAAAAAACAAAAAAAAgAAAQAA=</HashCode>
+      <HashCode>gSAAAAJgECAACAAAAAAAAAAAAAACAAAAAAAAgAAAQAA=</HashCode>
       <FileName>BaseSimulation.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -82,8 +82,29 @@
   <Class Name="TreeCalc.BaseSpell">
     <Position X="7.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgiAAABAAAAAQAAQAAAQAgAAAAAAAAEAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgiAAABABAAAQAAQAAAQAgAAAAAAAAEAA=</HashCode>
       <FileName>BaseSpell.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeCalc.BaseHeal">
+    <Position X="4.75" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseHeal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeCalc.Spells.Druid.Rejuvenation">
+    <Position X="2.25" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\Druid\Rejuvenation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeCalc.Spells.Druid.RejuvenationHoT">
+    <Position X="10.5" Y="9" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\Druid\RejuvenationHoT.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="TreeCalc.PlayerClassList" Collapsed="true">
@@ -112,6 +133,13 @@
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAA=</HashCode>
       <FileName>PlayerLevels.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="TreeCalc.BuffTargets">
+    <Position X="14.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAIAAAAAAAAAABACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BuffTargets.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Font Name="Segoe UI" Size="9" />

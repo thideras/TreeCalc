@@ -30,5 +30,10 @@ namespace TreeCalc {
         /// The player which the buff is currently affecting
         /// </summary>
         public Player OnPlayer { get; set; }
+
+        /// <summary>
+        /// Default duration of the buff. Can be extended by talents, relics, etc.
+        /// </summary>
+        public decimal DefaultDuration { get; set; }
     }
 }

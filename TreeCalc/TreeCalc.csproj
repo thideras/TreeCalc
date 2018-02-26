@@ -57,8 +57,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BaseHeal.cs" />
     <Compile Include="BaseHoT.cs" />
     <Compile Include="BaseSimulation.cs" />
+    <Compile Include="BuffTargets.cs" />
+    <Compile Include="Spells\Druid\RejuvenationHoT.cs" />
+    <Compile Include="Spells\Druid\Rejuvenation.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -121,8 +125,6 @@
   <ItemGroup>
     <Resource Include="Design\ImplementedFeatures.txt" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Spells\Druid\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -21,8 +21,8 @@ namespace TreeCalc {
 
         public decimal Cooldown { get; set; }
 
-        public List<BaseBuff> AppliedBuff { get; set; } = new List<BaseBuff>();
+        public bool TriggersGCD { get; set; } = true;
 
-        //public List<BaseHeal> AppliedHeal { get; set; } = new List<BaseHeal>();
+        public List<BaseBuff> AppliedBuff { get; set; } = new List<BaseBuff>();
     }
 }

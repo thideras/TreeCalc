@@ -41,6 +41,8 @@ namespace TreeCalc {
 
         protected List<Player> PlayerList { get; set; } = new List<Player>();
 
+        protected int PlayerMana { get; set; } //This should be part of player stats, but it will be here for testing
+
         protected abstract void CastHealing();
 
         public void Start() {
