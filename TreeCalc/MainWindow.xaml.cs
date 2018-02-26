@@ -21,5 +21,9 @@ namespace TreeCalc {
         public MainWindow() {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            Ticker ticker = new Ticker(0.1m, 15m, "Test");
+        }
     }
 }
