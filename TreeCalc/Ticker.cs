@@ -15,11 +15,25 @@ namespace TreeCalc {
             PlayerList.AddRange(GivenPlayers);
         }
 
+        /// <summary>
+        /// Current time in the simulation, in seconds.
+        /// </summary>
         private decimal CurrentTime { get; set; }
 
+        /// <summary>
+        /// Distance between the current and next 'tick' in time.
+        /// </summary>
         private decimal TickDuration { get; set; }
 
+        /// <summary>
+        /// Maximum fight duration, in seconds.
+        /// </summary>
         private decimal FightDuration { get; set; }
+
+        /// <summary>
+        /// Prevents casting of spells until the specified time.
+        /// </summary>
+        private decimal GCDLockoutUntil { get; set; }
 
         public string Label { get; private set; }
 
@@ -34,7 +48,6 @@ namespace TreeCalc {
             //Debug
             TreeCalc.BaseBuff hello = new BaseBuff();
             hello.Name = "Rejuvenation";
-            hello.PlayerID = 1;
             hello.EndTime = 15m;
             AllBuffs.Add(hello);
 
