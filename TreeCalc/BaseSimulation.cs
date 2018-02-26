@@ -60,6 +60,23 @@ namespace TreeCalc {
                 CurrentTime += TickDuration;
             }
 
+            //Calculate the total healing so we can calculate percentages later
+            decimal OverallHealingTotal = 0m;
+            foreach (BaseSpell CurrentSpell in TotalHealing) {
+                OverallHealingTotal += CurrentSpell.TotalHealing;
+            }
+
+            int SpellCount = 1;
+            foreach (BaseSpell CurrentSpell in TotalHealing) {
+                Debug.WriteLine("");
+                Debug.WriteLine("Fight duration: " + FightDuration + " seconds");
+                Debug.WriteLine("Total players: {0}", PlayerList.Count);
+                Debug.WriteLine("");
+                Debug.WriteLine("Total healing: {0:N} ({1:N} HPS)", OverallHealingTotal, OverallHealingTotal/FightDuration);
+                Debug.WriteLine(SpellCount++ + ". " + CurrentSpell.Name + " {0:N} - {1:P} ({2:N} HPS)", CurrentSpell.TotalHealing, CurrentSpell.TotalHealing / OverallHealingTotal, CurrentSpell.TotalHealing/FightDuration);
+                Debug.WriteLine("");
+            }
+
             Debug.WriteLine("Ending fight simulation. Label " + Label + ".");
         }
 
@@ -110,7 +127,9 @@ namespace TreeCalc {
                 //TODO Verify we have the spell added, this will blow up if the spell isn't in the list
                 Decimal HealedAmount = CurrentHoT.SpellPowerCoefficientPerTick * PlayerStats.MainStat;
                 CurrentHoTTotal.TotalHealing += HealedAmount;
-                Debug.WriteLine("Spell " + CurrentHoT.Name + " healed player " + CurrentHoT.OnPlayer.Name + " for " + HealedAmount);
+                Debug.WriteLine(CurrentTime + " Spell " + CurrentHoT.Name + " healed player " + CurrentHoT.OnPlayer.Name + " for " + HealedAmount);
+
+                CurrentHoT.NextTickTime = CurrentTime + CurrentHoT.BaseTickDuration;
             }
         }
 
