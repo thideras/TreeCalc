@@ -35,7 +35,10 @@ namespace TreeCalc {
         }
 
         private void Tick() {
-            throw new System.NotImplementedException();
+            //Debug code, remove this
+            if (CurrentTime / FightDuration == 0.25m || CurrentTime / FightDuration == 0.5m || CurrentTime / FightDuration == 0.75m) {
+                Console.WriteLine(CurrentTime / FightDuration);
+            }
         }
     }
 }
