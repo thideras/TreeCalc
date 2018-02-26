@@ -24,5 +24,7 @@ namespace TreeCalc {
         public bool TriggersGCD { get; set; } = true;
 
         public List<BaseBuff> AppliedBuff { get; set; } = new List<BaseBuff>();
+
+        public decimal TotalHealing { get; set; } = 0m;
     }
 }

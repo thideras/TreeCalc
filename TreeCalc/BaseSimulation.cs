@@ -11,7 +11,7 @@ namespace TreeCalc {
             TickDuration = GivenTickDuration;
             FightDuration = GivenFightDuration;
             Label = GivenLabel;
-            HealerStats = GivenStats;
+            PlayerStats = GivenStats;
 
             PlayerList.AddRange(GivenPlayers);
         }
@@ -38,11 +38,13 @@ namespace TreeCalc {
 
         public string Label { get; private set; }
 
-        protected BaseStats HealerStats { get; set; }
+        protected BaseStats PlayerStats { get; set; }
 
         protected List<TreeCalc.BaseBuff> AllBuffs { get; set; } = new List<BaseBuff>();
 
         protected List<Player> PlayerList { get; set; } = new List<Player>();
+
+        protected List<BaseSpell> TotalHealing { get; set; } = new List<BaseSpell>();
 
         protected int PlayerMana { get; set; } //This should be part of player stats, but it will be here for testing
 
@@ -98,7 +100,18 @@ namespace TreeCalc {
         }
 
         private void CalculateHoTHealing() {
-            List<BaseBuff> ToCalculate = AllBuffs.Where(b => b.)
+            List<BaseHoT> ToCalculate = AllBuffs.OfType<BaseHoT>().Where(b => b.NextTickTime <= CurrentTime).ToList();
+
+            foreach(BaseHoT CurrentHoT in ToCalculate) {
+                //This is extremely simple logic to calculate how much a HoT does
+                //It does not calculate in mastery or any other buffs and is simply to test the base logic
+                BaseSpell CurrentHoTTotal = TotalHealing.Where(b => b.ID == CurrentHoT.ID).FirstOrDefault();
+
+                //TODO Verify we have the spell added, this will blow up if the spell isn't in the list
+                Decimal HealedAmount = CurrentHoT.SpellPowerCoefficientPerTick * PlayerStats.MainStat;
+                CurrentHoTTotal.TotalHealing += HealedAmount;
+                Debug.WriteLine("Spell " + CurrentHoT.Name + " healed player " + CurrentHoT.OnPlayer.Name + " for " + HealedAmount);
+            }
         }
 
         /// <summary>
