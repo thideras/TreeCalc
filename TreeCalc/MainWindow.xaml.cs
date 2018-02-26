@@ -46,7 +46,7 @@ namespace TreeCalc {
             PlayerList.Add(playerBub);
 
 
-            Ticker ticker = new Ticker(0.1m, 150m, "Test", PlayerList);
+            BaseSimulation ticker = new BaseSimulation(0.1m, 150m, "Test", PlayerList);
             ticker.Start();
         }
     }

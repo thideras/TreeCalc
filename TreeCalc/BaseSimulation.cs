@@ -5,8 +5,8 @@ using System.Text;
 using System.Diagnostics;
 
 namespace TreeCalc {
-    public class Ticker {
-        public Ticker(decimal GivenTickDuration, decimal GivenFightDuration, string GivenLabel, List<Player> GivenPlayers) {
+    public class BaseSimulation {
+        public BaseSimulation(decimal GivenTickDuration, decimal GivenFightDuration, string GivenLabel, List<Player> GivenPlayers) {
             CurrentTime = 0m;
             TickDuration = GivenTickDuration;
             FightDuration = GivenFightDuration;
