@@ -9,7 +9,6 @@ namespace TreeCalc {
             Class = new PlayerClass(GivenClassType);
             Race = new PlayerRace(GivenRaceType);
             Name = GivenName;
-            //TODO: Determine if we need a player ID. If an ID is not needed, we need to verify names are unique.
 
             //DEBUG: Stats are manually set so we don't have to add up gear. In the future, this data will be pulled from the gear and buffs during normal execution
             //Int: 75466

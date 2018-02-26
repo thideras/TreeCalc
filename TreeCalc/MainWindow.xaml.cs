@@ -30,7 +30,23 @@ namespace TreeCalc {
         }
 
         private void Button_Click(object sender, RoutedEventArgs e) {
-            Ticker ticker = new Ticker(0.1m, 150m, "Test");
+            //Test players
+            List<Player> PlayerList = new List<Player>();
+
+            Player playerThideras = new Player(PlayerClassList.Druid, PlayerRaceList.HighmountainTauren, "Thideras");
+            Player playerShadowruin = new Player(PlayerClassList.Hunter, PlayerRaceList.BloodElf, "Shadowruin");
+            Player playerImpezor = new Player(PlayerClassList.Priest, PlayerRaceList.Goblin, "Impezor");
+            Player playerBrimgor = new Player(PlayerClassList.Monk, PlayerRaceList.BloodElf, "Brimgor");
+            Player playerBub = new Player(PlayerClassList.Warrior, PlayerRaceList.Tauren, "Bubelien");
+
+            PlayerList.Add(playerThideras);
+            PlayerList.Add(playerShadowruin);
+            PlayerList.Add(playerImpezor);
+            PlayerList.Add(playerBrimgor);
+            PlayerList.Add(playerBub);
+
+
+            Ticker ticker = new Ticker(0.1m, 150m, "Test", PlayerList);
             ticker.Start();
         }
     }

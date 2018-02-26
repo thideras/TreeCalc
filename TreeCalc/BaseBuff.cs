@@ -14,6 +14,6 @@ namespace TreeCalc {
 
         public decimal EndTime { get; set; }
 
-        public int PlayerID { get; set; }
+        public Player OnPlayer { get; set; }
     }
 }

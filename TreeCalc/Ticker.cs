@@ -6,11 +6,13 @@ using System.Diagnostics;
 
 namespace TreeCalc {
     public class Ticker {
-        public Ticker(decimal GivenTickDuration, decimal GivenFightDuration, string GivenLabel) {
+        public Ticker(decimal GivenTickDuration, decimal GivenFightDuration, string GivenLabel, List<Player> GivenPlayers) {
             CurrentTime = 0m;
             TickDuration = GivenTickDuration;
             FightDuration = GivenFightDuration;
             Label = GivenLabel;
+
+            PlayerList.AddRange(GivenPlayers);
         }
 
         private decimal CurrentTime { get; set; }
@@ -22,6 +24,8 @@ namespace TreeCalc {
         public string Label { get; private set; }
 
         private List<TreeCalc.BaseBuff> AllBuffs { get; set; } = new List<BaseBuff>();
+
+        private List<Player> PlayerList { get; set; } = new List<Player>();
 
         public void Start() {
             Debug.WriteLine("Starting fight simulation. Label " + Label + ". Duration " + FightDuration + ". Tick " + TickDuration + ".");
