@@ -46,7 +46,7 @@ namespace TreeCalc {
             PlayerList.Add(playerBub);
 
             BaseStats CurrentStats = new BaseStats();
-            CurrentStats.MainStat = 75466;
+            CurrentStats.MainStat = 78000;
 
 
             Logic.Druid.DruidSimpleLogic ticker = new Logic.Druid.DruidSimpleLogic(0.01m, 150m, "Test", PlayerList, CurrentStats);

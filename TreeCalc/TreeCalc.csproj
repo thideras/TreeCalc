@@ -59,6 +59,7 @@
     </ApplicationDefinition>
     <Compile Include="BaseHeal.cs" />
     <Compile Include="BaseHoT.cs" />
+    <Compile Include="BasePlayerLevelStatics.cs" />
     <Compile Include="BaseSimulation.cs" />
     <Compile Include="BuffTargets.cs" />
     <Compile Include="Spells\Druid\RejuvenationHoT.cs" />
@@ -86,7 +87,6 @@
     <Compile Include="PlayerClassList.cs" />
     <Compile Include="GearSlotList.cs" />
     <Compile Include="PlayerGearSlots.cs" />
-    <Compile Include="PlayerLevels.cs" />
     <Compile Include="PlayerRace.cs" />
     <Compile Include="PlayerRaceList.cs" />
     <Compile Include="BaseStats.cs" />

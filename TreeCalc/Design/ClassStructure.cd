@@ -3,7 +3,7 @@
   <Class Name="TreeCalc.Player">
     <Position X="7" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAAAAAAAAgAAAAAIAQAQABAAAAAAABAAAAAAAAAA=</HashCode>
+      <HashCode>QAAAAAAAAAAAgAAAAAIAQAQABAAAAAAABAAABAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -61,14 +61,14 @@
   <Class Name="TreeCalc.BaseSimulation">
     <Position X="17.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gSAAAAJgECAACAAAAAAAAAAAAAACAAAAAAAAgAAAQAA=</HashCode>
+      <HashCode>gSBAAAJgECAACAAAAAAABAAAQAACAgAABAAAgAAgQAA=</HashCode>
       <FileName>BaseSimulation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TreeCalc.BaseHoT">
     <Position X="11.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAIAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAIAIAAAAAAAAAAAA=</HashCode>
       <FileName>BaseHoT.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -82,7 +82,7 @@
   <Class Name="TreeCalc.BaseSpell">
     <Position X="7.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgiAAABABAAAQAAQAAAQAgAAAAAAAAEAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgiAAABABAAAQAAQAAAwAgAAAAAAAAEAA=</HashCode>
       <FileName>BaseSpell.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -107,6 +107,13 @@
       <FileName>Spells\Druid\RejuvenationHoT.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="TreeCalc.BasePlayerLevelStatics">
+    <Position X="13.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEgAAAQAAAAAAAAAAABAAEAAAAAAAA=</HashCode>
+      <FileName>BasePlayerLevelStatics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="TreeCalc.PlayerClassList" Collapsed="true">
     <Position X="11.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
@@ -126,13 +133,6 @@
     <TypeIdentifier>
       <HashCode>IAIAAAAAAwAAQIAAEAAAAAAAAAAAgAgAQAAAAACAgQA=</HashCode>
       <FileName>GearSlotList.cs</FileName>
-    </TypeIdentifier>
-  </Enum>
-  <Enum Name="TreeCalc.PlayerLevels">
-    <Position X="13.5" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGAAA=</HashCode>
-      <FileName>PlayerLevels.cs</FileName>
     </TypeIdentifier>
   </Enum>
   <Enum Name="TreeCalc.BuffTargets">
