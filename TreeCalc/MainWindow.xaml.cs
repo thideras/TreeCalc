@@ -45,10 +45,14 @@ namespace TreeCalc {
             PlayerList.Add(playerBrimgor);
             PlayerList.Add(playerBub);
 
-            BaseStats CurrentStats = new BaseStats();
-            CurrentStats.MainStat = 78000;
-
             BasePlayerLevelStatics LevelStatics = new RestoDruid110Statics();
+
+            BaseStats CurrentStats = new BaseStats(LevelStatics);
+            CurrentStats.MainStat = 78000;
+            CurrentStats.CritRating = 9489;
+            CurrentStats.HasteRating = 9098;
+            CurrentStats.MasteryRating = 11832;
+            CurrentStats.VersatilityRating = 1749;
 
             Logic.Druid.DruidSimpleLogic ticker = new Logic.Druid.DruidSimpleLogic(0.01m, 150m, "Test", PlayerList, CurrentStats, LevelStatics);
             ticker.Start();

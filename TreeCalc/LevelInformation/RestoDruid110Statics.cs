@@ -16,11 +16,14 @@ namespace TreeCalc {
 
             BaseHastePercentage = 0m;
             BaseCritPercentage = 0.05m;
-            BaseMasteryPercentage = 0m;
+            BaseMasteryPercentage = 0.048m;
+            BaseVersatilityPercentage = 0m;
+            BaseLeechPercentage = 0m;
 
             HasteRatingConversion = 375;
             CritRatingConversion = 400;
             MasteryRatingConversion = 667;
+            VersatilityRatingConversion = 475;
             LeechRatingConversion = 230;
         }
     }
