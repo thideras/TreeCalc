@@ -62,6 +62,7 @@
     <Compile Include="BasePlayerLevelStatics.cs" />
     <Compile Include="BaseSimulation.cs" />
     <Compile Include="BuffTargets.cs" />
+    <Compile Include="LevelInformation\RestoDruid110Statics.cs" />
     <Compile Include="Spells\Druid\RejuvenationHoT.cs" />
     <Compile Include="Spells\Druid\Rejuvenation.cs" />
     <Page Include="MainWindow.xaml">

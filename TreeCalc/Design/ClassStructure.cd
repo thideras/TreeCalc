@@ -108,9 +108,9 @@
     </TypeIdentifier>
   </Class>
   <Class Name="TreeCalc.BasePlayerLevelStatics">
-    <Position X="13.25" Y="0.75" Width="1.5" />
+    <Position X="2" Y="10.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEgAAAQAAAAAAAAAAABAAEAAAAAAAA=</HashCode>
+      <HashCode>QAAAAABAAAABAAQAAAAAIAAAAQAAAACBAABEJAAAEAA=</HashCode>
       <FileName>BasePlayerLevelStatics.cs</FileName>
     </TypeIdentifier>
   </Class>
