@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TreeCalc {
     public class RestoDruid110Statics : BasePlayerLevelStatics {
-        RestoDruid110Statics() {
+        public RestoDruid110Statics() {
             Level = 110;
             MainStat = 7327;
             Stamina = 6261;

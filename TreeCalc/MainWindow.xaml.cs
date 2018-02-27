@@ -48,8 +48,9 @@ namespace TreeCalc {
             BaseStats CurrentStats = new BaseStats();
             CurrentStats.MainStat = 78000;
 
+            BasePlayerLevelStatics LevelStatics = new RestoDruid110Statics();
 
-            Logic.Druid.DruidSimpleLogic ticker = new Logic.Druid.DruidSimpleLogic(0.01m, 150m, "Test", PlayerList, CurrentStats);
+            Logic.Druid.DruidSimpleLogic ticker = new Logic.Druid.DruidSimpleLogic(0.01m, 150m, "Test", PlayerList, CurrentStats, LevelStatics);
             ticker.Start();
         }
     }

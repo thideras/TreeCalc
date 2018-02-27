@@ -6,12 +6,13 @@ using System.Diagnostics;
 
 namespace TreeCalc {
     public abstract class BaseSimulation {
-        public BaseSimulation(decimal GivenTickDuration, decimal GivenFightDuration, string GivenLabel, List<Player> GivenPlayers, BaseStats GivenStats) {
+        public BaseSimulation(decimal GivenTickDuration, decimal GivenFightDuration, string GivenLabel, List<Player> GivenPlayers, BaseStats GivenStats, BasePlayerLevelStatics GivenLevelStatics) {
             CurrentTime = 0m;
             TickDuration = GivenTickDuration;
             FightDuration = GivenFightDuration;
             Label = GivenLabel;
             PlayerStats = GivenStats;
+            LevelStatics = GivenLevelStatics;
 
             PlayerList.AddRange(GivenPlayers);
         }
@@ -45,6 +46,8 @@ namespace TreeCalc {
         protected List<Player> PlayerList { get; set; } = new List<Player>();
 
         protected List<BaseSpell> TotalHealing { get; set; } = new List<BaseSpell>();
+
+        protected BasePlayerLevelStatics LevelStatics { get; set; }
 
         protected int PlayerMana { get; set; } //This should be part of player stats, but it will be here for testing
 

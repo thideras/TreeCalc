@@ -6,7 +6,7 @@ using System.Diagnostics;
 
 namespace TreeCalc.Logic.Druid {
     public class DruidSimpleLogic : BaseSimulation {
-        public DruidSimpleLogic(decimal GivenTickDuration, decimal GivenFightDuration, string GivenLabel, List<Player> GivenPlayers, BaseStats GivenStats) : base(GivenTickDuration, GivenFightDuration, GivenLabel, GivenPlayers, GivenStats) {
+        public DruidSimpleLogic(decimal GivenTickDuration, decimal GivenFightDuration, string GivenLabel, List<Player> GivenPlayers, BaseStats GivenStats, BasePlayerLevelStatics GivenLevelStatics) : base(GivenTickDuration, GivenFightDuration, GivenLabel, GivenPlayers, GivenStats, GivenLevelStatics) {
             //TODO We should automatically add a spell when we use it (this might be slow?) or find some other way to automate this
             TotalHealing.Add(new Spells.Druid.Rejuvenation());
         }
