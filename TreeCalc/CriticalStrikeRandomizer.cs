@@ -7,9 +7,9 @@ namespace TreeCalc {
     public static class CriticalStrikeRandomizer {
         private static Random CritRand = new Random();
 
-        //0-10,000 allows precision down to xx.xx% critical strike chance
+        //0-1,000 allows precision down to xx.xx% critical strike chance
         private static readonly int LowerBound = 0;
-        private static readonly int UpperBound = 10000;
+        private static readonly int UpperBound = 1000;
 
         /// <summary>
         /// Returns whether a spell was a critical strike or not. Randomness precision is to four signifigant figures.
@@ -17,7 +17,7 @@ namespace TreeCalc {
         /// <param name="CritPercentage"></param>
         /// <returns></returns>
         public static bool IsRandom(decimal CritPercentage) {
-            return CritRand.Next(LowerBound, UpperBound) < (CritPercentage * 100);
+            return CritRand.Next(LowerBound, UpperBound) < (CritPercentage * 1000);
         }
     }
 }

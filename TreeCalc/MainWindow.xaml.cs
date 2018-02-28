@@ -33,20 +33,6 @@ namespace TreeCalc {
             //Test players
             List<Player> PlayerList = PartyCreator(5);
 
-            //List<Player> PlayerList = new List<Player>();
-
-            //Player playerThideras = new Player(PlayerClassList.Druid, PlayerRaceList.HighmountainTauren, "Thideras");
-            //Player playerShadowruin = new Player(PlayerClassList.Hunter, PlayerRaceList.BloodElf, "Shadowruin");
-            //Player playerImpezor = new Player(PlayerClassList.Priest, PlayerRaceList.Goblin, "Impezor");
-            //Player playerBrimgor = new Player(PlayerClassList.Monk, PlayerRaceList.BloodElf, "Brimgor");
-            //Player playerBub = new Player(PlayerClassList.Warrior, PlayerRaceList.Tauren, "Bubelien");
-
-            //PlayerList.Add(playerThideras);
-            //PlayerList.Add(playerShadowruin);
-            //PlayerList.Add(playerImpezor);
-            //PlayerList.Add(playerBrimgor);
-            //PlayerList.Add(playerBub);
-
             BasePlayerLevelStatics LevelStatics = new RestoDruid110Statics();
 
             BaseStats CurrentStats = new BaseStats(LevelStatics);
@@ -56,7 +42,7 @@ namespace TreeCalc {
             CurrentStats.MasteryRating = 11832;
             CurrentStats.VersatilityRating = 1749;
 
-            Logic.Druid.DruidSimpleLogic ticker = new Logic.Druid.DruidSimpleLogic(0.01m, 150m, "Test", PlayerList, CurrentStats, LevelStatics);
+            Logic.Druid.DruidSimpleLogic ticker = new Logic.Druid.DruidSimpleLogic(0.01m, 600m, "Test", PlayerList, CurrentStats, LevelStatics);
             ticker.Start();
         }
 

@@ -27,10 +27,13 @@ namespace TreeCalc {
 
 
         //Properties below this line are for calculating statistics of a fight
+        //TODO This should be seperate from the above class since it is not related
         public decimal TotalHealing { get; set; } = 0m;
 
         public int Applications { get; set; } = 0;
 
         public int Ticks { get; set; } = 0;
+
+        public int CriticalStrikes { get; set; } = 0;
     }
 }

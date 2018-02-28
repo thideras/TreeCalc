@@ -54,7 +54,7 @@ namespace TreeCalc {
         protected abstract void CastHealing();
 
         public void Start() {
-            Debug.WriteLine("Starting fight simulation. Label " + Label + ". Duration " + FightDuration + ". Tick " + TickDuration + ".");
+            Console.WriteLine("Starting fight simulation. Label " + Label + ". Duration " + FightDuration + ". Tick " + TickDuration + ".");
             CurrentTime = 0m;
 
             //Loop through the entire fight with a time width of the given tick duration
@@ -69,19 +69,20 @@ namespace TreeCalc {
                 OverallHealingTotal += CurrentSpell.TotalHealing;
             }
 
-            Debug.WriteLine("");
-            Debug.WriteLine("Fight duration: " + FightDuration + " seconds");
-            Debug.WriteLine("Total players: {0}", PlayerList.Count);
-            Debug.WriteLine("");
-            Debug.WriteLine("Total healing: {0:N} ({1:N} HPS)", OverallHealingTotal, OverallHealingTotal / FightDuration);
+            Console.WriteLine("");
+            Console.WriteLine("Fight duration: " + FightDuration + " seconds");
+            Console.WriteLine("Total players: {0}", PlayerList.Count);
+            Console.WriteLine("");
+            Console.WriteLine("Total healing: {0:N} ({1:N} HPS)", OverallHealingTotal, OverallHealingTotal / FightDuration);
 
             int SpellCount = 1;
             foreach (BaseSpell CurrentSpell in TotalHealing) {
-                Debug.WriteLine(SpellCount++ + ". " + CurrentSpell.Name + " {0:N} - {1:P} ({2:N} HPS), {3} casts, {4} ticks", CurrentSpell.TotalHealing, CurrentSpell.TotalHealing / OverallHealingTotal, CurrentSpell.TotalHealing/FightDuration, CurrentSpell.Applications, CurrentSpell.Ticks);
+                Console.WriteLine(SpellCount++ + ". " + CurrentSpell.Name + " {0:N} - {1:P} ({2:N} HPS)", CurrentSpell.TotalHealing, CurrentSpell.TotalHealing / OverallHealingTotal, CurrentSpell.TotalHealing/FightDuration);
+                Console.WriteLine("     {0} casts, {1} ticks, {2} crits ({3:P})", CurrentSpell.Applications, CurrentSpell.Ticks, CurrentSpell.CriticalStrikes, (decimal)CurrentSpell.CriticalStrikes / (decimal)CurrentSpell.Ticks);
             }
 
-            Debug.WriteLine("");
-            Debug.WriteLine("Ending fight simulation. Label " + Label + ".");
+            Console.WriteLine("");
+            Console.WriteLine("Ending fight simulation. Label " + Label + ".");
         }
 
         private void Tick() {
@@ -133,6 +134,13 @@ namespace TreeCalc {
                 
                 //[Spell coefficient] * [Player spell power] * [Mastery] * ([Overall healing increase] + [Versatility])
                 Decimal HealedAmount = CurrentHoT.SpellPowerCoefficientPerTick * PlayerStats.MainStat * (1 + HoTCount * PlayerStats.MasteryPercentage) * (1 + LevelStatics.OverallHealingIncrease + PlayerStats.VersatilityPercentage);
+
+                //If the spell was a critical strike, double it
+                if (CriticalStrikeRandomizer.IsRandom(PlayerStats.CritPercentage) == true) {
+                    HealedAmount *= 2;
+                    CurrentHoTTotal.CriticalStrikes += 1;
+                }
+
                 CurrentHoTTotal.TotalHealing += HealedAmount;
                 Debug.WriteLine(CurrentTime + " Spell " + CurrentHoT.Name + " healed player " + CurrentHoT.OnPlayer.Name + " for {0:F2}", HealedAmount);
 
