@@ -8,6 +8,16 @@ Healing calculations (Legion): https://docs.google.com/spreadsheets/d/1hNxL8H32b
 
 ------------------------------------------------------
 
+Healing amount
+
+The amount a Hot heals is determined by the spell's healing coefficient, the player's spell power (determined from intellect), mastery, versatility, and the overall healing increases the player has (artifact weapon, etc). The formula for calculating the healing of the Hot is:
+
+(Spell power coefficient) * (Spell power) * [1 + (Hot count) * (Mastery percentage)] * [1 + (Overall healing increases) + Versatility]
+Example: 0.60 coefficient, 1000 spell power, 1 Hot, 25% mastery, 10% healing increase, 2% versatility: (0.60) * (1000) * (1 + 1 * 0.25) * (1 + 0.10 + 0.02) = 840 heal
+Example: 0.60 coefficient, 1000 spell power, 2 Hots, 25% mastery, 10% healing increase, 2% versatility: (0.60) * (1000) * (1 + 2 * 0.25) * (1 + 0.10 + 0.02) = 1008 heal
+
+------------------------------------------------------
+
 Hot "scheduling"
 When a HoT is placed on a player, or a tick happens, the current haste of the casting player determines when the next tick of the HoT will occur. If the players haste changes after a tick happens -- either more haste or less haste --, the next tick still happens at the original "scheduled" time. This means we only care about the haste the same moment a tick happens (or when the HoT is applied). To see proof of this, view the "HoT tick calculations (Draenor)" document, "Haste timing with changes" tab.
 
