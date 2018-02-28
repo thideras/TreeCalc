@@ -135,7 +135,11 @@ namespace TreeCalc {
                 CurrentHoTTotal.TotalHealing += HealedAmount;
                 Debug.WriteLine(CurrentTime + " Spell " + CurrentHoT.Name + " healed player " + CurrentHoT.OnPlayer.Name + " for {0:F2}", HealedAmount);
 
-                CurrentHoT.NextTickTime = CurrentTime + CurrentHoT.BaseTickDuration;
+                //Determine when the next tick will occur
+                //CurrentHoT.NextTickTime = CurrentTime + CurrentHoT.BaseTickDuration;
+                decimal TickDuration = CurrentHoT.BaseTickDuration / (1 + PlayerStats.HastePercentage);
+                Debug.WriteLine(CurrentTime + " Spell " + CurrentHoT.Name + " tick time of {0:F2} scheduled for {1:F2}", TickDuration, CurrentTime + TickDuration);
+                CurrentHoT.NextTickTime = CurrentTime + TickDuration;
             }
         }
 
