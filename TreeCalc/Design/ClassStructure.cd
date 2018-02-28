@@ -128,6 +128,13 @@
       <FileName>Spells\Druid\GerminationHoT.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="TreeCalc.CriticalStrikeRandomizer">
+    <Position X="16.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAgAAAAAAEAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>CriticalStrikeRandomizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Enum Name="TreeCalc.PlayerClassList" Collapsed="true">
     <Position X="11.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>

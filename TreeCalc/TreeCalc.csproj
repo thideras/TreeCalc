@@ -62,6 +62,7 @@
     <Compile Include="BasePlayerLevelStatics.cs" />
     <Compile Include="BaseSimulation.cs" />
     <Compile Include="BuffTargets.cs" />
+    <Compile Include="CriticalStrikeRandomizer.cs" />
     <Compile Include="Spells\Druid\GerminationHoT.cs" />
     <Compile Include="Spells\Druid\Germination.cs" />
     <Compile Include="LevelInformation\RestoDruid110Statics.cs" />
