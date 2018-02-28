@@ -136,10 +136,15 @@ namespace TreeCalc {
                 Debug.WriteLine(CurrentTime + " Spell " + CurrentHoT.Name + " healed player " + CurrentHoT.OnPlayer.Name + " for {0:F2}", HealedAmount);
 
                 //Determine when the next tick will occur
-                //CurrentHoT.NextTickTime = CurrentTime + CurrentHoT.BaseTickDuration;
-                decimal TickDuration = CurrentHoT.BaseTickDuration / (1 + PlayerStats.HastePercentage);
-                Debug.WriteLine(CurrentTime + " Spell " + CurrentHoT.Name + " tick time of {0:F2} scheduled for {1:F2}", TickDuration, CurrentTime + TickDuration);
-                CurrentHoT.NextTickTime = CurrentTime + TickDuration;
+                if (CurrentHoT.AffectedByHaste == true) {
+                    decimal TickDuration = CurrentHoT.BaseTickDuration / (1 + PlayerStats.HastePercentage);
+                    Debug.WriteLine(CurrentTime + " Spell " + CurrentHoT.Name + " tick time of {0:F2} scheduled for {1:F2}", TickDuration, CurrentTime + TickDuration);
+                    CurrentHoT.NextTickTime = CurrentTime + TickDuration;
+                }
+                else {
+                    Debug.WriteLine(CurrentTime + " Spell " + CurrentHoT.Name + " tick time of {0:F2} scheduled for {1:F2}", CurrentHoT.BaseTickDuration, CurrentTime + CurrentHoT.BaseTickDuration);
+                    CurrentHoT.NextTickTime = CurrentTime + CurrentHoT.BaseTickDuration;
+                }
             }
         }
 

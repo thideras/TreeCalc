@@ -11,5 +11,10 @@ namespace TreeCalc {
         public decimal BaseTickDuration { get; set; }
         
         public decimal NextTickTime { get; set; }
+
+        /// <summary>
+        /// Determines whether the HoT is affected by haste.
+        /// </summary>
+        public bool AffectedByHaste { get; set; } = true;
     }
 }
