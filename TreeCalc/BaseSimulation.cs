@@ -69,17 +69,18 @@ namespace TreeCalc {
                 OverallHealingTotal += CurrentSpell.TotalHealing;
             }
 
+            Debug.WriteLine("");
+            Debug.WriteLine("Fight duration: " + FightDuration + " seconds");
+            Debug.WriteLine("Total players: {0}", PlayerList.Count);
+            Debug.WriteLine("");
+            Debug.WriteLine("Total healing: {0:N} ({1:N} HPS)", OverallHealingTotal, OverallHealingTotal / FightDuration);
+
             int SpellCount = 1;
             foreach (BaseSpell CurrentSpell in TotalHealing) {
-                Debug.WriteLine("");
-                Debug.WriteLine("Fight duration: " + FightDuration + " seconds");
-                Debug.WriteLine("Total players: {0}", PlayerList.Count);
-                Debug.WriteLine("");
-                Debug.WriteLine("Total healing: {0:N} ({1:N} HPS)", OverallHealingTotal, OverallHealingTotal/FightDuration);
-                Debug.WriteLine(SpellCount++ + ". " + CurrentSpell.Name + " {0:N} - {1:P} ({2:N} HPS)", CurrentSpell.TotalHealing, CurrentSpell.TotalHealing / OverallHealingTotal, CurrentSpell.TotalHealing/FightDuration);
-                Debug.WriteLine("");
+                Debug.WriteLine(SpellCount++ + ". " + CurrentSpell.Name + " {0:N} - {1:P} ({2:N} HPS), {3} casts, {4} ticks", CurrentSpell.TotalHealing, CurrentSpell.TotalHealing / OverallHealingTotal, CurrentSpell.TotalHealing/FightDuration, CurrentSpell.Applications, CurrentSpell.Ticks);
             }
 
+            Debug.WriteLine("");
             Debug.WriteLine("Ending fight simulation. Label " + Label + ".");
         }
 
@@ -126,6 +127,7 @@ namespace TreeCalc {
             foreach(BaseHoT CurrentHoT in ToCalculate) {
                 //TODO Verify we have the spell added, this will blow up if the spell isn't in the list
                 BaseSpell CurrentHoTTotal = TotalHealing.Where(b => b.ID == CurrentHoT.ID).FirstOrDefault();
+                CurrentHoTTotal.Ticks += 1;
 
                 //Calculate how many HoTs the player has on them, so we know how mastery affects the heal
                 int HoTCount = CurrentHoT.OnPlayer.PlayerBuffs.OfType<BaseHoT>().Count();
@@ -159,6 +161,10 @@ namespace TreeCalc {
 
             GivenPlayer.PlayerBuffs.Add(GivenBuff);
             AllBuffs.Add(GivenBuff);
+
+            //TODO Verify we have the spell added, this will blow up if the spell isn't in the list
+            BaseSpell CurrentHoTTotal = TotalHealing.Where(b => b.ID == GivenBuff.ID).FirstOrDefault();
+            CurrentHoTTotal.Applications += 1;
 
             //We do NOT set the time for the first tick, because a HoT's first tick is immediately after it is applied
         }

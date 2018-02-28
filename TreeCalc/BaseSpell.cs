@@ -25,6 +25,12 @@ namespace TreeCalc {
 
         public List<BaseBuff> AppliedBuff { get; set; } = new List<BaseBuff>();
 
+
+        //Properties below this line are for calculating statistics of a fight
         public decimal TotalHealing { get; set; } = 0m;
+
+        public int Applications { get; set; } = 0;
+
+        public int Ticks { get; set; } = 0;
     }
 }
