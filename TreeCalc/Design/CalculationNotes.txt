@@ -8,6 +8,13 @@ Healing calculations (Legion): https://docs.google.com/spreadsheets/d/1hNxL8H32b
 
 ------------------------------------------------------
 
+Interesting information discovered:
+
+1. The amount haste increases output effectively double dips. Not only does it make hots tick faster, it makes the GCD shorter, which allows for more casts. Haste affecting the GCD increases the total output in a 1:1 fashion (24% haste increases the output 24%) when *only* accounting for the effect on the GCD (not ticks).
+
+
+------------------------------------------------------
+
 Healing amount
 
 The amount a Hot heals is determined by the spell's healing coefficient, the player's spell power (determined from intellect), mastery, versatility, and the overall healing increases the player has (artifact weapon, etc). Note: the following formula for calculating healing is correct, as far as I know. The information was gathered in game and found through trial and error. As of Legion, it is correct within +/- 0.137%, which is 'good enough'.

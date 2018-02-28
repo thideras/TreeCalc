@@ -173,8 +173,14 @@ namespace TreeCalc {
         /// Enables the lockout of the GCD
         /// </summary>
         protected void EnableGCDLockout() {
-            //TODO Calculate haste's effects on the GCD
-            GCDLockoutUntil = CurrentTime + 1.5m;
+            decimal CurrentHaste = PlayerStats.HastePercentage;
+
+            //We need to enforce the cap of 50% haste applied to the GCD
+            if (CurrentHaste > 0.5m) {
+                CurrentHaste = 0.5m;
+            }
+
+            GCDLockoutUntil = CurrentTime + (1.5m / (1m + CurrentHaste));
         }
 
         /// <summary>
