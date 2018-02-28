@@ -31,19 +31,21 @@ namespace TreeCalc {
 
         private void Button_Click(object sender, RoutedEventArgs e) {
             //Test players
-            List<Player> PlayerList = new List<Player>();
+            List<Player> PlayerList = PartyCreator(5);
 
-            Player playerThideras = new Player(PlayerClassList.Druid, PlayerRaceList.HighmountainTauren, "Thideras");
-            Player playerShadowruin = new Player(PlayerClassList.Hunter, PlayerRaceList.BloodElf, "Shadowruin");
-            Player playerImpezor = new Player(PlayerClassList.Priest, PlayerRaceList.Goblin, "Impezor");
-            Player playerBrimgor = new Player(PlayerClassList.Monk, PlayerRaceList.BloodElf, "Brimgor");
-            Player playerBub = new Player(PlayerClassList.Warrior, PlayerRaceList.Tauren, "Bubelien");
+            //List<Player> PlayerList = new List<Player>();
 
-            PlayerList.Add(playerThideras);
-            PlayerList.Add(playerShadowruin);
-            PlayerList.Add(playerImpezor);
-            PlayerList.Add(playerBrimgor);
-            PlayerList.Add(playerBub);
+            //Player playerThideras = new Player(PlayerClassList.Druid, PlayerRaceList.HighmountainTauren, "Thideras");
+            //Player playerShadowruin = new Player(PlayerClassList.Hunter, PlayerRaceList.BloodElf, "Shadowruin");
+            //Player playerImpezor = new Player(PlayerClassList.Priest, PlayerRaceList.Goblin, "Impezor");
+            //Player playerBrimgor = new Player(PlayerClassList.Monk, PlayerRaceList.BloodElf, "Brimgor");
+            //Player playerBub = new Player(PlayerClassList.Warrior, PlayerRaceList.Tauren, "Bubelien");
+
+            //PlayerList.Add(playerThideras);
+            //PlayerList.Add(playerShadowruin);
+            //PlayerList.Add(playerImpezor);
+            //PlayerList.Add(playerBrimgor);
+            //PlayerList.Add(playerBub);
 
             BasePlayerLevelStatics LevelStatics = new RestoDruid110Statics();
 
@@ -56,6 +58,16 @@ namespace TreeCalc {
 
             Logic.Druid.DruidSimpleLogic ticker = new Logic.Druid.DruidSimpleLogic(0.01m, 150m, "Test", PlayerList, CurrentStats, LevelStatics);
             ticker.Start();
+        }
+
+        private List<Player> PartyCreator(int NumberOfPlayers) {
+            List<Player> PlayerList = new List<Player>();
+
+            for(int i = 1; i <= NumberOfPlayers; i++) {
+                PlayerList.Add(new Player(PlayerClassList.Druid, PlayerRaceList.HighmountainTauren, "Player" + i.ToString()));
+            }
+
+            return PlayerList;
         }
     }
 }

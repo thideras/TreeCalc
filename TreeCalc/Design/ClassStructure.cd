@@ -30,7 +30,7 @@
   <Class Name="TreeCalc.BaseStats">
     <Position X="0.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAgAAAAAAUgAEAQAEAAQACAAAAAAAFAAIAIAAA=</HashCode>
+      <HashCode>ABIAIAIgAAAAAAUgAEAQAEAAQCCBAABAAAFAgYAIAQA=</HashCode>
       <FileName>BaseStats.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -61,14 +61,14 @@
   <Class Name="TreeCalc.BaseSimulation">
     <Position X="17.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gSBAAAJgECAACAAAAAAABAAAQAACAgAABAAAgAAgQAA=</HashCode>
+      <HashCode>gSJAAAJgECAACAAAAAAABAAAQAACAgAABAAAgAAgQAA=</HashCode>
       <FileName>BaseSimulation.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="TreeCalc.BaseHoT">
     <Position X="11.5" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAIAIAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEAEAAAAAAAAAAIAIAAAAAAAAAAAA=</HashCode>
       <FileName>BaseHoT.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -82,7 +82,7 @@
   <Class Name="TreeCalc.BaseSpell">
     <Position X="7.25" Y="7.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgiAAABABAAAQAAQAAAwAgAAAAAAAAEAA=</HashCode>
+      <HashCode>AAAAAAAAABAgiAAABABAAAQAAQAACwAgAAAAAAAAEAA=</HashCode>
       <FileName>BaseSpell.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -110,8 +110,22 @@
   <Class Name="TreeCalc.BasePlayerLevelStatics">
     <Position X="2" Y="10.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>QAAAAABAAAABAAQAAAAAIAAAAQAAAACBAABEJAAAEAA=</HashCode>
+      <HashCode>QAAAAAFSAAABAAQAAAAAIAAAAQAAACCBAABEJAAAEAA=</HashCode>
       <FileName>BasePlayerLevelStatics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeCalc.Spells.Druid.Germination">
+    <Position X="4" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\Druid\Germination.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeCalc.Spells.Druid.GerminationHoT">
+    <Position X="13" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\Druid\GerminationHoT.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="TreeCalc.PlayerClassList" Collapsed="true">

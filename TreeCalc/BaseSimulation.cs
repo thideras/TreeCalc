@@ -102,14 +102,13 @@ namespace TreeCalc {
         /// Removes any expired buffs from the AllBuffs property
         /// </summary>
         private void RemoveExpiredBuffs() {
-            //Find a list of all the buffs which expired
-            //We could do a .RemoveAll(<predicate>), but I want to print what we expired for debugging purposes
-
             //If AllBuffs is null, we can't create a list from it
             if (AllBuffs == null) {
                 return;
             }
 
+            //Find a list of all the buffs which expired
+            //We could do a .RemoveAll(<predicate>), but I want to print what we expired for debugging purposes
             List<TreeCalc.BaseBuff> BuffsToRemove = AllBuffs.Where(b => b.EndTime <= CurrentTime).ToList();
 
             foreach (TreeCalc.BaseBuff CurrentBuff in BuffsToRemove) {
