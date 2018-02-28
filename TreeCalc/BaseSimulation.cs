@@ -120,17 +120,20 @@ namespace TreeCalc {
         }
 
         private void CalculateHoTHealing() {
+            //Give us a list of all HoTs which have a tick time of now or earlier so we can calculate the healing
             List<BaseHoT> ToCalculate = AllBuffs.OfType<BaseHoT>().Where(b => b.NextTickTime <= CurrentTime).ToList();
 
             foreach(BaseHoT CurrentHoT in ToCalculate) {
-                //This is extremely simple logic to calculate how much a HoT does
-                //It does not calculate in mastery or any other buffs and is simply to test the base logic
+                //TODO Verify we have the spell added, this will blow up if the spell isn't in the list
                 BaseSpell CurrentHoTTotal = TotalHealing.Where(b => b.ID == CurrentHoT.ID).FirstOrDefault();
 
-                //TODO Verify we have the spell added, this will blow up if the spell isn't in the list
-                Decimal HealedAmount = CurrentHoT.SpellPowerCoefficientPerTick * PlayerStats.MainStat;
+                //Calculate how many HoTs the player has on them, so we know how mastery affects the heal
+                int HoTCount = CurrentHoT.OnPlayer.PlayerBuffs.OfType<BaseHoT>().Count();
+                
+                //[Spell coefficient] * [Player spell power] * [Mastery] * ([Overall healing increase] + [Versatility])
+                Decimal HealedAmount = CurrentHoT.SpellPowerCoefficientPerTick * PlayerStats.MainStat * (1 + HoTCount * PlayerStats.MasteryPercentage) * (1 + LevelStatics.OverallHealingIncrease + PlayerStats.VersatilityPercentage);
                 CurrentHoTTotal.TotalHealing += HealedAmount;
-                Debug.WriteLine(CurrentTime + " Spell " + CurrentHoT.Name + " healed player " + CurrentHoT.OnPlayer.Name + " for " + HealedAmount);
+                Debug.WriteLine(CurrentTime + " Spell " + CurrentHoT.Name + " healed player " + CurrentHoT.OnPlayer.Name + " for {0:F2}", HealedAmount);
 
                 CurrentHoT.NextTickTime = CurrentTime + CurrentHoT.BaseTickDuration;
             }

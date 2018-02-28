@@ -17,6 +17,11 @@ namespace TreeCalc {
 
         public int ManaPerFive { get; protected set; }
 
+        /// <summary>
+        /// Total of all permanent healing increases (artifact weapon, etc)
+        /// </summary>
+        public decimal OverallHealingIncrease { get; set; }
+
 
         public decimal BaseHastePercentage { get; protected set; }
 
