@@ -148,10 +148,7 @@ namespace TreeCalc {
             GivenPlayer.PlayerBuffs.Add(GivenBuff);
             AllBuffs.Add(GivenBuff);
 
-            if (GivenBuff.GetType() == typeof(BaseHoT)) {
-                //TODO Needs to calculate in effects of haste
-                ((BaseHoT)GivenBuff).NextTickTime = CurrentTime + ((BaseHoT)GivenBuff).BaseTickDuration;
-            }
+            //We do NOT set the time for the first tick, because a HoT's first tick is immediately after it is applied
         }
 
         /// <summary>
