@@ -10,7 +10,7 @@ Healing calculations (Legion): https://docs.google.com/spreadsheets/d/1hNxL8H32b
 
 Healing amount
 
-The amount a Hot heals is determined by the spell's healing coefficient, the player's spell power (determined from intellect), mastery, versatility, and the overall healing increases the player has (artifact weapon, etc). The formula for calculating the healing of the Hot is:
+The amount a Hot heals is determined by the spell's healing coefficient, the player's spell power (determined from intellect), mastery, versatility, and the overall healing increases the player has (artifact weapon, etc). Note: the following formula for calculating healing is correct, as far as I know. The information was gathered in game and found through trial and error. As of Legion, it is correct within +/- 0.137%, which is 'good enough'.
 
 (Spell power coefficient) * (Spell power) * [1 + (Hot count) * (Mastery percentage)] * [1 + (Overall healing increases) + Versatility]
 Example: 0.60 coefficient, 1000 spell power, 1 Hot, 25% mastery, 10% healing increase, 2% versatility: (0.60) * (1000) * (1 + 1 * 0.25) * (1 + 0.10 + 0.02) = 840 heal
