@@ -78,7 +78,7 @@ namespace TreeCalc {
             int SpellCount = 1;
             foreach (BaseSpell CurrentSpell in TotalHealing) {
                 Console.WriteLine(SpellCount++ + ". " + CurrentSpell.Name + " {0:N} - {1:P} ({2:N} HPS)", CurrentSpell.TotalHealing, CurrentSpell.TotalHealing / OverallHealingTotal, CurrentSpell.TotalHealing/FightDuration);
-                Console.WriteLine("     {0} casts, {1} ticks, {2} crits ({3:P})", CurrentSpell.Applications, CurrentSpell.Ticks, CurrentSpell.CriticalStrikes, (decimal)CurrentSpell.CriticalStrikes / (decimal)CurrentSpell.Ticks);
+                Console.WriteLine("     {0} casts, {1} ticks, {2} partials, {3} crits ({4:P})", CurrentSpell.Applications, CurrentSpell.Ticks, CurrentSpell.PartialTicks, CurrentSpell.CriticalStrikes, (decimal)CurrentSpell.CriticalStrikes / (decimal)CurrentSpell.Ticks);
             }
 
             Console.WriteLine("");
@@ -97,6 +97,7 @@ namespace TreeCalc {
             RemoveExpiredBuffs();
             CastHealing();
             CalculateHoTHealing();
+            
         }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace TreeCalc {
 
             //Find a list of all the buffs which expired
             //We could do a .RemoveAll(<predicate>), but I want to print what we expired for debugging purposes
-            List<TreeCalc.BaseBuff> BuffsToRemove = AllBuffs.Where(b => b.EndTime <= CurrentTime).ToList();
+            List<TreeCalc.BaseBuff> BuffsToRemove = AllBuffs.Where(b => b.EndTime < CurrentTime).ToList();
 
             foreach (TreeCalc.BaseBuff CurrentBuff in BuffsToRemove) {
                 Debug.WriteLine(CurrentTime + " " + CurrentBuff.Name + " removed from player " + CurrentBuff.OnPlayer.Name);
@@ -132,8 +133,13 @@ namespace TreeCalc {
                 //Calculate how many HoTs the player has on them, so we know how mastery affects the heal
                 int HoTCount = CurrentHoT.OnPlayer.PlayerBuffs.OfType<BaseHoT>().Count();
                 
-                //[Spell coefficient] * [Player spell power] * [Mastery] * ([Overall healing increase] + [Versatility])
-                Decimal HealedAmount = CurrentHoT.SpellPowerCoefficientPerTick * PlayerStats.MainStat * (1 + HoTCount * PlayerStats.MasteryPercentage) * (1 + LevelStatics.OverallHealingIncrease + PlayerStats.VersatilityPercentage);
+                //[Spell coefficient] * [Player spell power] * [Mastery] * ([Overall healing increase] + [Versatility]) * [Percent remaining tick]
+                Decimal HealedAmount = CurrentHoT.SpellPowerCoefficientPerTick * PlayerStats.MainStat * (1 + HoTCount * PlayerStats.MasteryPercentage) * (1 + LevelStatics.OverallHealingIncrease + PlayerStats.VersatilityPercentage) * CurrentHoT.PercentRemainingTick;
+
+                //Count partial ticks
+                if (CurrentHoT.PercentRemainingTick != 1m) {
+                    CurrentHoTTotal.PartialTicks += 1;
+                }
 
                 //If the spell was a critical strike, double it
                 if (CriticalStrikeRandomizer.IsRandom(PlayerStats.CritPercentage) == true) {
@@ -149,10 +155,21 @@ namespace TreeCalc {
                     decimal TickDuration = CurrentHoT.BaseTickDuration / (1 + PlayerStats.HastePercentage);
                     Debug.WriteLine(CurrentTime + " Spell " + CurrentHoT.Name + " tick time of {0:F2} scheduled for {1:F2}", TickDuration, CurrentTime + TickDuration);
                     CurrentHoT.NextTickTime = CurrentTime + TickDuration;
+
+                    //Check to see if there is a remainder tick we need to calculate
+                    if (CurrentHoT.NextTickTime > CurrentHoT.EndTime) {
+                        CurrentHoT.PercentRemainingTick = (CurrentHoT.EndTime - CurrentTime) / TickDuration;
+                        CurrentHoT.NextTickTime = CurrentHoT.EndTime;
+                    }
                 }
                 else {
                     Debug.WriteLine(CurrentTime + " Spell " + CurrentHoT.Name + " tick time of {0:F2} scheduled for {1:F2}", CurrentHoT.BaseTickDuration, CurrentTime + CurrentHoT.BaseTickDuration);
                     CurrentHoT.NextTickTime = CurrentTime + CurrentHoT.BaseTickDuration;
+
+                    //Check to see if there is a remainder tick we need to calculate
+                    if (CurrentHoT.NextTickTime > CurrentHoT.EndTime) {
+                        CurrentHoT.PercentRemainingTick = (CurrentHoT.EndTime - CurrentTime) / CurrentHoT.BaseTickDuration;
+                    }
                 }
             }
         }

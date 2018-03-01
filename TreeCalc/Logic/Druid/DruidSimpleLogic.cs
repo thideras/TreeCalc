@@ -27,6 +27,7 @@ namespace TreeCalc.Logic.Druid {
                 return;
             }
 
+            //If all players have rejuvenation, cast germination
             Player GermTarget = PlayerList.Where(p => p.PlayerBuffs.All(b => b.ID != 155777)).FirstOrDefault();
             if (GermTarget != null) {
                 Debug.WriteLine(CurrentTime + " Casting Germination on player " + GermTarget.Name);

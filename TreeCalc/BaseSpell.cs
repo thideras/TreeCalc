@@ -35,5 +35,7 @@ namespace TreeCalc {
         public int Ticks { get; set; } = 0;
 
         public int CriticalStrikes { get; set; } = 0;
+
+        public int PartialTicks { get; set; } = 0;
     }
 }
