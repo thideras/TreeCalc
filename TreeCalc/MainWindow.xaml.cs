@@ -33,11 +33,14 @@ namespace TreeCalc
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            _log.Debug("Debug");
-            _log.Info("Info");
-            _log.Warn("Warn");
-            _log.Error("Error");
-            _log.Fatal("Fatal");
+            var instance = new HealingInstance(1);
+            instance.AddPlayer(new Player("thideras"));
+            instance.AddPlayer(new Player("grennish"));
+            instance.AddPlayer(new Player("shadowruin"));
+            instance.AddPlayer(new Player("waygu"));
+            instance.AddPlayer(new Player("brimgor"));
+
+
         }
     }
 }
