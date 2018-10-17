@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using log4net;
+using TreeCalc.Buffs;
 
 namespace TreeCalc
 {
@@ -33,14 +34,24 @@ namespace TreeCalc
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var instance = new HealingInstance(1);
-            instance.AddPlayer(new Player("thideras"));
-            instance.AddPlayer(new Player("grennish"));
-            instance.AddPlayer(new Player("shadowruin"));
-            instance.AddPlayer(new Player("waygu"));
-            instance.AddPlayer(new Player("brimgor"));
+            var instance = new HealingInstance(1, 30m);
+            var playerThid = new Player("thideras");
+            var playerGren = new Player("grennish");
+            var playerShad = new Player("shadowruin");
+            var playerWayg = new Player("waygu");
+            var playerBrim = new Player("brimgor");
 
+            instance.AddPlayer(playerThid);
+            instance.AddPlayer(playerGren);
+            instance.AddPlayer(playerShad);
+            instance.AddPlayer(playerWayg);
+            instance.AddPlayer(playerBrim);
 
+            instance.AddEffect(new Rejuvenation(playerGren));
+
+            instance.NextAction();
+            instance.NextAction();
+            instance.NextAction();
         }
     }
 }

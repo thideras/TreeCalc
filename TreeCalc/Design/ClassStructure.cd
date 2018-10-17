@@ -10,9 +10,17 @@
   <Class Name="TreeCalc.HealingInstance">
     <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAIAgAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAkAAAAAACAIAgAAAAAAgA=</HashCode>
       <FileName>HealingInstance.cs</FileName>
     </TypeIdentifier>
+  </Class>
+  <Class Name="TreeCalc.Buffs.Rejuvenation">
+    <Position X="12.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Buffs\Rejuvenation.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="TreeCalc.Interfaces.IBase">
     <Position X="9.5" Y="0.5" Width="1.5" />
@@ -24,7 +32,7 @@
   <Interface Name="TreeCalc.Interfaces.IEffect">
     <Position X="9.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAACAQAAAAA=</HashCode>
       <FileName>Interfaces\IEffect.cs</FileName>
     </TypeIdentifier>
   </Interface>

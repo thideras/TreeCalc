@@ -18,8 +18,6 @@ namespace TreeCalc
         public Player(string playerName)
         {
             Name = playerName;
-
-            _log.Debug($"Added player {playerName}");
         }
     }
 }
