@@ -10,15 +10,30 @@
   <Class Name="TreeCalc.HealingInstance">
     <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAAAAAAAAAkAAAAAACAIAgAAAAAAgA=</HashCode>
+      <HashCode>AAAAAAEAAAAAAUAAAAAAACAkIAABAQCAIEoAAAAAAgA=</HashCode>
       <FileName>HealingInstance.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="TreeCalc.Buffs.Rejuvenation">
+  <Class Name="TreeCalc.Buffs.Druid.RejuvenationBuff">
     <Position X="12.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAASAAAAAAAAAAAAAAQAAAAA=</HashCode>
-      <FileName>Buffs\Rejuvenation.cs</FileName>
+      <HashCode>AAACAAAAAAAAAAAAAEAAAASAAAAAIAIAAAACgQAAAAA=</HashCode>
+      <FileName>Buffs\Druid\RejuvenationBuff.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TreeCalc.HealingLogic.Druid.DruidSimpleLogic" Collapsed="true">
+    <Position X="2.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>HealingLogic\Druid\DruidSimpleLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TreeCalc.Spells.Druid.Rejuvenation" Collapsed="true">
+    <Position X="15.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAABAAAAAAAAAQAAAAAAYAAAAAAAAAAAAA=</HashCode>
+      <FileName>Spells\Druid\Rejuvenation.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -32,16 +47,23 @@
   <Interface Name="TreeCalc.Interfaces.IEffect">
     <Position X="9.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAACAQAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAACgQAAAAA=</HashCode>
       <FileName>Interfaces\IEffect.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Enum Name="TreeCalc.Enums.EffectTypes">
+  <Interface Name="TreeCalc.Interfaces.ISpell">
     <Position X="11.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAgAAAA=</HashCode>
-      <FileName>EffectTypes.cs</FileName>
+      <HashCode>AAAAAAAAAQAABAAAAAAAAAAAAAAAAYAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\ISpell.cs</FileName>
     </TypeIdentifier>
-  </Enum>
+  </Interface>
+  <Interface Name="TreeCalc.Interfaces.IHot">
+    <Position X="9.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAIAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IHot.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

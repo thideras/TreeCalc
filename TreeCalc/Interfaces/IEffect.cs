@@ -11,6 +11,6 @@ namespace TreeCalc.Interfaces
         EffectTypes EffectType { get; }
         Player Player { get; }
         decimal ExpirationTime { get; set; }
-        decimal NextTickTime { get; set; } //This will be moved to an IHoT interface later
+        decimal BaseDuration { get; }
     }
 }

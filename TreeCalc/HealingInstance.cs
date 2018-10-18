@@ -12,7 +12,7 @@ namespace TreeCalc
     /// <summary>
     /// Contains a single group's healing instance, so multiple can be run in parallel
     /// </summary>
-    public class HealingInstance
+    public abstract class HealingInstance
     {
         private readonly ILog _log = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private List<Player> players = new List<Player>();
@@ -36,26 +36,33 @@ namespace TreeCalc
 
         public bool IsRaid { get; private set; }
 
+        public abstract void GcdLockedLogic();      //Logic to determine an action taken for Gcd locked abilities
+
+        public abstract void NonGcLockedLogic();    //Logic to determine an action taken for non-Gcd locked abilities
+
         public void NextAction()
         {
             //This will eventually determine what the next action or calculation is, depending on the effect list, GCD, etc
             //Right now, this will be very simple
 
-            var expiredEffects = effects.Where(e => e.ExpirationTime <= currentTime);
+            var expiredEffects = effects.Where(e => e.ExpirationTime < currentTime).ToList();
             foreach(var effect in expiredEffects)
             {
-                //Ending effect (lifeblom) should be added here
+                //Ending effect (lifebloom) should be added here
 
                 LogDebug($"Removing effect {effect.Name}:{effect.Id} from player {effect.Player.Name}");
                 effects.Remove(effect);
             }
 
-            var nextTick = effects.OrderBy(e => e.NextTickTime).FirstOrDefault();
+            var nextTick = effects.Where(e => e is IHot)
+                                  .Select(e => e as IHot)
+                                  .OrderBy(e => e.NextTickTime)
+                                  .FirstOrDefault();
             if (nextTick != null)
             {
                 LogDebug($"{nextTick.Name} happened on player {nextTick.Player.Name}");
                 currentTime = nextTick.NextTickTime;
-                nextTick.NextTickTime += 3m;
+                nextTick.NextTickTime += nextTick.BaseTickDuration;
                 return;
             }
 
@@ -78,8 +85,17 @@ namespace TreeCalc
             //This will not be public later on and probably not even in this class
 
             effect.ExpirationTime = currentTime + 15m; //This will be set elsewhere
-            effect.NextTickTime = 3m; //This will be set elsewhere
+            //effect.NextTickTime = 3m; //This will be set elsewhere
             effects.Add(effect);
+        }
+
+        public void AddHot(IHot hot)
+        {
+            //This will not likely be here or be called this in the future
+
+            hot.ExpirationTime = currentTime + hot.BaseDuration;
+            hot.NextTickTime = currentTime + hot.BaseTickDuration;
+            effects.Add(hot);
         }
 
         private void LogDebug(string message)
